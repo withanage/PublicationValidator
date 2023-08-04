@@ -1,0 +1,6 @@
+
+msgid "plugins.generic.publicationValidator.displayName"
+msgstr "Publication validation Plugin"
+
+msgid "plugins.generic.publicationValidator.description"
+msgstr "Plugin description"
