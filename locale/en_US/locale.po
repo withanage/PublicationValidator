@@ -4,3 +4,27 @@ msgstr "Publication validation Plugin"
 
 msgid "plugins.generic.publicationValidator.description"
 msgstr "Plugin description"
+
+msgid "plugins.generic.publicationValidator.setting.description"
+msgstr "Plugin settings description"
+
+msgid "plugins.generic.publicationValidator.setting.enableValidation"
+msgstr "Enable Validation"
+
+msgid "plugins.generic.publicationValidator.setting.enableOpenAire.description"
+msgstr "OpenAire"
+
+msgid "plugins.generic.publicationValidator.setting.enableDoaj.description"
+msgstr "DOAJ"
+
+msgid "plugins.generic.publicationValidator.setting.enableBase.description"
+msgstr "Base"
+
+msgid "plugins.generic.publicationValidator.setting.enableWebOfScience.description"
+msgstr "Web Of Science"
+
+msgid "plugins.generic.publicationValidator.setting.enableCrossref.description"
+msgstr "Crossref"
+
+msgid "plugins.generic.publicationValidator.setting.enableJGate.description"
+msgstr "J-Gate"
