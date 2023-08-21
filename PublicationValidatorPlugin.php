@@ -1,7 +1,7 @@
 <?php
 
-
 import('lib.pkp.classes.plugins.GenericPlugin');
+import('plugins.generic.publicationValidator.classes.services.ServiceDOAJ');
 
 class PublicationValidatorPlugin extends GenericPlugin
 {
@@ -12,6 +12,7 @@ class PublicationValidatorPlugin extends GenericPlugin
 
 		if ($success && $this->getEnabled()) {
 			// Do something when the plugin is enabled
+			\HookRegistry::register('Publication::validatePublish', [$this, 'validate']);
 		}
 
 		return $success;
@@ -153,11 +154,36 @@ class PublicationValidatorPlugin extends GenericPlugin
 
 	/**
 	 * Check if there exist a valid publication validator configuration section in the global config.inc.php of OJS.
-	 * @return boolean True, if the config file has openair, doaj, base, web_of_science, crossref, jgate set in an [publicationValidator] section
+	 * @return boolean True, if the config file has openair, doaj, base, web_of_science, crossref, jgate set in an [PublicationValidator] section
 	 */
 	public function isGloballyConfigured($key)
 	{
 		$configValue = Config::getVar('publicationValidator', $key);
 		return isset($configValue) && $configValue === 1;
+	}
+
+	/**
+	 * Make additional validation checks against publishing requirements
+	 *
+	 * @see PKPPublicationService::validatePublish()
+	 * @param $hookName string
+	 * @param $args array [
+	 *		@option array Validation errors already identified
+	 *		@option Publication The publication to validate
+	 *		@option Submission The submission of the publication being validated
+	 *		@option array The locales accepted for this object
+	 *		@option string The primary locale for this object
+	 * ]
+	 */
+	public function validate($hookName, $args) {
+		$errors =& $args[0];
+		$publication = $args[1];
+		$submission = $args[2];
+		$request = PKPApplication::get()->getRequest();
+		$context = $request->getContext();
+
+		if(Config::getVar('publicationValidator', 'doaj') === 1 || $this->getSetting($context->getId(), 'enableDoaj') == 1){
+			$errors = $errors + (new ServiceDOAJ())->validate($publication,$submission,$context)->getErrors();
+		}
 	}
 }

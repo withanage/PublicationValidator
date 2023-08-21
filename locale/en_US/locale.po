@@ -28,3 +28,24 @@ msgstr "Crossref"
 
 msgid "plugins.generic.publicationValidator.setting.enableJGate.description"
 msgstr "J-Gate"
+
+msgid "plugins.generic.publicationValidator.authors.authorsNotFound"
+msgstr "No authors found"
+
+msgid "plugins.generic.publicationValidator.authors.authorAffiliation"
+msgstr "No author affiliation found"
+
+msgid "plugins.generic.publicationValidator.publication.locale"
+msgstr "invalid locale"
+
+msgid "plugins.generic.publicationValidator.publication.abstract"
+msgstr "Abstract cannot be empty"
+
+msgid "plugins.generic.publicationValidator.publication.publisher"
+msgstr "Publisher cannot be empty"
+
+msgid "plugins.generic.publicationValidator.publication.doi"
+msgstr "DOI cannot be empty"
+
+msgid "plugins.generic.publicationValidator.publication.resourceType"
+msgstr "DOAJ document type should be Articles"
