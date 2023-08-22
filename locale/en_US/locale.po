@@ -3,7 +3,7 @@ msgid "plugins.generic.publicationValidator.displayName"
 msgstr "Publication validation Plugin"
 
 msgid "plugins.generic.publicationValidator.description"
-msgstr "This Plugin validates the article metadata  mandatory for indexing in the following services: DOAJ"
+msgstr "This Plugin validates the article  mandatory metadata   for indexing in the following services: DOAJ"
 
 msgid "plugins.generic.publicationValidator.setting.description"
 msgstr "Publication validation settings"
