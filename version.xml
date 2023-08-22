@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE version SYSTEM "../../../lib/pkp/dtd/pluginVersion.dtd">
 <version>
-	<application>PublicationValidator</application>
+	<application>publicationValidator</application>
 	<type>plugins.generic</type>
 	<release>1.0.0.0</release>
 	<date>2023-08-04</date>
