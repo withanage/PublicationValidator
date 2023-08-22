@@ -1,7 +1,12 @@
 ## Publication Validator plugin
 
 This Plugin validates the article  mandatory metadata   for indexing in the following services:
-- DOAJ
+
+| Service  | Supported             |
+|----------|-----------------------|
+| DOAJ     | :OK:                  |
+| OpenAire | :construction_worker: |
+
 
 
 ### Supported OJS versions
