@@ -44,8 +44,12 @@ msgstr "Abstract cannot be empty"
 msgid "plugins.generic.publicationValidator.publication.publisher"
 msgstr "Publisher cannot be empty"
 
+msgid "plugins.generic.publicationValidator.publication.issn"
+msgstr "printissn/onlineissn cannot be empty"
+
 msgid "plugins.generic.publicationValidator.publication.doi"
 msgstr "DOI cannot be empty"
 
-msgid "plugins.generic.publicationValidator.publication.resourceType"
-msgstr "DOAJ document type should be Articles"
+msgid "plugins.generic.publicationValidator.publication.services"
+msgstr "<h3>This journal is indexed in {$services} . Following mandatory fields are required by the above services.<br> Fill those fields in and try to republish.</h3>"
+

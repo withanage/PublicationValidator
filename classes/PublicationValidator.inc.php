@@ -6,12 +6,14 @@ abstract class PublicationValidator
 	protected array $errors;
 
 	/**
+	 * validate
 	 * @param Publication $publication
 	 * @param Submission $submission
 	 */
 	abstract public function validate(Publication $publication, Submission $submission, $context);
 
 	/**
+	 * validate author and author affiliation
 	 * @param $publications
 	 * @return array
 	 */
@@ -32,6 +34,7 @@ abstract class PublicationValidator
 	}
 
 	/**
+	 * validate locale
 	 * @param $publications
 	 * @return array
 	 */
@@ -45,6 +48,7 @@ abstract class PublicationValidator
 	}
 
 	/**
+	 * validate abstract
 	 * @param $publications
 	 * @return array
 	 */
@@ -58,6 +62,7 @@ abstract class PublicationValidator
 	}
 
 	/**
+	 * validate publisher
 	 * @param $context
 	 * @return array
 	 */
@@ -71,6 +76,7 @@ abstract class PublicationValidator
 	}
 
 	/**
+	 * validate printIssn and onlineIssn
 	 * @param $context
 	 * @return array
 	 */
@@ -84,6 +90,7 @@ abstract class PublicationValidator
 	}
 
 	/**
+	 * validate identifier
 	 * @param $submission
 	 * @return array
 	 */
@@ -97,19 +104,7 @@ abstract class PublicationValidator
 	}
 
 	/**
-	 * @param $section
-	 * @return array
-	 */
-	public function validateResourceType($section,$local) : array
-	{
-		$validationErrors = [];
-		if ($section->getData('title',$local) != 'Articles') {
-			$validationErrors[] = __('plugins.generic.publicationValidator.publication.resourceType');
-		}
-		return $validationErrors;
-	}
-
-	/**
+	 * get all validation errors
 	 * @return array
 	 */
 	public function getErrors(): array
