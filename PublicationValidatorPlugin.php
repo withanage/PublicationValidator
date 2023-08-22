@@ -181,9 +181,18 @@ class PublicationValidatorPlugin extends GenericPlugin
 		$submission = $args[2];
 		$request = PKPApplication::get()->getRequest();
 		$context = $request->getContext();
+		$includedServices = '';
 
 		if(Config::getVar('publicationValidator', 'doaj') === 1 || $this->getSetting($context->getId(), 'enableDoaj') == 1){
 			$errors = $errors + (new ServiceDOAJ())->validate($publication,$submission,$context)->getErrors();
+			$includedServices = $includedServices.' DOAJ,';
 		}
+		$includedServices = rtrim($includedServices,',');
+		if(!empty($errors)){
+			$errors[] = __(
+				'plugins.generic.publicationValidator.publication.services',
+				array('services' => $includedServices));
+		}
+
 	}
 }
