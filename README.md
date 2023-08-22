@@ -4,7 +4,7 @@ This Plugin validates the article  mandatory metadata   for indexing in the foll
 
 | Service  | Supported             |
 |----------|-----------------------|
-| DOAJ     | :ok:                  |
+| DOAJ     | :heavy_check_mark:                  |
 | OpenAire | :construction_worker: |
 
 
