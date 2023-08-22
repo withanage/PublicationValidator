@@ -3,10 +3,10 @@ msgid "plugins.generic.publicationValidator.displayName"
 msgstr "Publication validation Plugin"
 
 msgid "plugins.generic.publicationValidator.description"
-msgstr "Plugin description"
+msgstr "This Plugin validates the article metadata  mandatory for indexing in the following services: DOAJ"
 
 msgid "plugins.generic.publicationValidator.setting.description"
-msgstr "Plugin settings description"
+msgstr "Publication validation settings"
 
 msgid "plugins.generic.publicationValidator.setting.enableValidation"
 msgstr "Enable Validation"
@@ -46,6 +46,3 @@ msgstr "Publisher cannot be empty"
 
 msgid "plugins.generic.publicationValidator.publication.doi"
 msgstr "DOI cannot be empty"
-
-msgid "plugins.generic.publicationValidator.publication.resourceType"
-msgstr "DOAJ document type should be Articles"

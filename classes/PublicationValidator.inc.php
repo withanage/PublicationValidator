@@ -61,11 +61,11 @@ abstract class PublicationValidator
 	 * @param $context
 	 * @return array
 	 */
-	public function validatePublisher($context) : array
+	public function validatePublisher($context, $service) : array
 	{
 		$validationErrors = [];
 		if (empty($context->getData('publisherInstitution'))) {
-			$validationErrors[] = __('plugins.generic.publicationValidator.publication.publisher');
+			$validationErrors[] = __('plugins.generic.publicationValidator.publication.publisher')+$service;
 		}
 		return $validationErrors;
 	}
