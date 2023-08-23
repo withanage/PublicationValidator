@@ -2,10 +2,11 @@
 
 This Plugin validates the article  mandatory metadata   for indexing in the following services:
 
-| Service  | Supported             |
-|----------|-----------------------|
-| DOAJ     | :heavy_check_mark:                  |
-| OpenAire | :construction_worker: |
+| Service        | Supported             |
+|----------------|-----------------------|
+| DOAJ           | :heavy_check_mark:                  |
+| OpenAire       | :construction_worker: |
+| Web Of Science | :construction_worker: |
 
 
 
@@ -25,5 +26,13 @@ git checkout -b stable-3_3_0 # branch
 - Got to settings
 - Enable services needed for validation
 
-### Example
-[example.webm](https://github.com/ipula/publicationValidator/assets/21024487/bbe1a719-161e-4609-a220-f0c69cc40807)
+### Demo
+- [Service Demo](https://github.com/ipula/publicationValidator/assets/21024487/bbe1a719-161e-4609-a220-f0c69cc40807)
+
+### Troubleshooting
+- Please file a [Issue](https://github.com/withanage/publicationValidator/issues)
+
+
+# Information
+- This OJS plugin was developed by [TIB](https://tib.eu) under the European grant [CRAFT-OA](https://www.craft-oa.eu/).
+
