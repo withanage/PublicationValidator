@@ -25,3 +25,5 @@ git checkout -b stable-3_3_0 # branch
 - Got to settings
 - Enable services needed for validation
 
+### Example
+[example.webm](https://github.com/ipula/publicationValidator/assets/21024487/bbe1a719-161e-4609-a220-f0c69cc40807)
