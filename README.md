@@ -27,10 +27,10 @@ git checkout -b stable-3_3_0 # branch
 - Enable services needed for validation
 
 ### Demo
-- [Service Demo](https://github.com/ipula/publicationValidator/assets/21024487/bbe1a719-161e-4609-a220-f0c69cc40807)
+- [DOAJ validation](https://github.com/ipula/publicationValidator/assets/21024487/bbe1a719-161e-4609-a220-f0c69cc40807)
 
 ### Troubleshooting
-- Please file a [Issue](https://github.com/withanage/publicationValidator/issues)
+- Please file an [Issue](https://github.com/withanage/publicationValidator/issues)
 
 
 # Information
