@@ -30,26 +30,79 @@ msgid "plugins.generic.publicationValidator.setting.enableJGate.description"
 msgstr "J-Gate"
 
 msgid "plugins.generic.publicationValidator.authors.authorsNotFound"
-msgstr "No authors found"
+msgstr "No authors found ({$service})"
 
 msgid "plugins.generic.publicationValidator.authors.authorAffiliation"
-msgstr "No author affiliation found"
+msgstr "No author affiliation found ({$service})"
 
 msgid "plugins.generic.publicationValidator.publication.locale"
-msgstr "invalid locale"
+msgstr "invalid locale ({$service})"
 
 msgid "plugins.generic.publicationValidator.publication.abstract"
-msgstr "Abstract cannot be empty"
+msgstr "Abstract cannot be empty ({$service})"
 
 msgid "plugins.generic.publicationValidator.publication.publisher"
-msgstr "Publisher cannot be empty"
+msgstr "Publisher cannot be empty ({$service})"
 
 msgid "plugins.generic.publicationValidator.publication.issn"
-msgstr "printissn/onlineissn cannot be empty"
+msgstr "printissn/onlineissn cannot be empty ({$service})"
 
 msgid "plugins.generic.publicationValidator.publication.doi"
-msgstr "DOI cannot be empty"
+msgstr "DOI cannot be empty ({$service})"
 
-msgid "plugins.generic.publicationValidator.publication.services"
-msgstr "<h3>This journal is indexed in {$services} . Following mandatory fields are required by the above services.<br> Fill those fields in and try to republish.</h3>"
+msgid "plugins.generic.publicationValidator.publication.articleTitle"
+msgstr "Article title cannot be empty ({$service})"
 
+msgid "plugins.generic.publicationValidator.publication.publicationDate"
+msgstr "Publication date cannot be empty ({$service})"
+
+msgid "plugins.generic.publicationValidator.publication.licenseUrl"
+msgstr "License cannot be empty ({$service})"
+
+msgid "plugins.generic.publicationValidator.publication.subjects"
+msgstr "Publication subjects cannot be empty ({$service})"
+
+msgid "plugins.generic.publicationValidator.publication.rights"
+msgstr "Publication rights cannot be empty ({$service})"
+
+msgid "plugins.generic.publicationValidator.field.abstract"
+msgstr "Abstract"
+
+msgid "plugins.generic.publicationValidator.field.authors"
+msgstr "Authors"
+
+msgid "plugins.generic.publicationValidator.field.authorAffiliation"
+msgstr "Author affiliation"
+
+msgid "plugins.generic.publicationValidator.field.locale"
+msgstr "Locale"
+
+msgid "plugins.generic.publicationValidator.field.publisher"
+msgstr "Publisher"
+
+msgid "plugins.generic.publicationValidator.field.publicationDate"
+msgstr "Publication date"
+
+msgid "plugins.generic.publicationValidator.field.doi"
+msgstr "DOI"
+
+msgid "plugins.generic.publicationValidator.field.articleTitle"
+msgstr "Article title"
+
+msgid "plugins.generic.publicationValidator.field.issn"
+msgstr "Issn"
+
+msgid "plugins.generic.publicationValidator.field.subjects"
+msgstr "Subjects"
+
+msgid "plugins.generic.publicationValidator.field.licenseUrl"
+msgstr "License"
+
+msgid "plugins.generic.publicationValidator.field.articleTitle"
+msgstr "Article title"
+
+msgid "plugins.generic.publicationValidator.field.rights"
+msgstr "Access rights"
+
+msgid "plugins.generic.publicationValidator.field.common"
+msgstr "fields will be validate before publishing"
