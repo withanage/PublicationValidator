@@ -2,6 +2,7 @@
 
 import('lib.pkp.classes.plugins.GenericPlugin');
 import('plugins.generic.publicationValidator.classes.services.ServiceDOAJ');
+import('plugins.generic.publicationValidator.classes.services.ServiceOpenAire');
 
 class PublicationValidatorPlugin extends GenericPlugin
 {
@@ -163,6 +164,45 @@ class PublicationValidatorPlugin extends GenericPlugin
 	}
 
 	/**
+	 * create message which fields will be
+	 * validated before publish when enabled OpenAire
+	 * @return string
+	 */
+	public function validateOpenAireFields() :string
+	{
+		return __('plugins.generic.publicationValidator.field.abstract').' ,'.
+			       __('plugins.generic.publicationValidator.field.authors').' ,'.
+			       __('plugins.generic.publicationValidator.field.authorAffiliation').' ,'.
+			       __('plugins.generic.publicationValidator.field.articleTitle').' ,'.
+			       __('plugins.generic.publicationValidator.field.locale').' ,'.
+			       __('plugins.generic.publicationValidator.field.publisher').' ,'.
+			       __('plugins.generic.publicationValidator.field.doi').' ,'.
+			       __('plugins.generic.publicationValidator.field.issn').' ,'.
+			       __('plugins.generic.publicationValidator.field.subjects').' ,'.
+			       __('plugins.generic.publicationValidator.field.licenseUrl').' ,'.
+			       __('plugins.generic.publicationValidator.field.rights').' ,'.
+			       __('plugins.generic.publicationValidator.field.common');
+	}
+
+	/**
+	 * create message which fields will be
+	 * validated before publish when enabled DOAJ
+	 * @return string
+	 */
+	public function validateDoajFields() :string
+	{
+		return __('plugins.generic.publicationValidator.field.abstract').' ,'.
+			__('plugins.generic.publicationValidator.field.authors').' ,'.
+			__('plugins.generic.publicationValidator.field.authorAffiliation').' ,'.
+			__('plugins.generic.publicationValidator.field.articleTitle').' ,'.
+			__('plugins.generic.publicationValidator.field.locale').' ,'.
+			__('plugins.generic.publicationValidator.field.publisher').' ,'.
+			__('plugins.generic.publicationValidator.field.doi').' ,'.
+			__('plugins.generic.publicationValidator.field.issn').' ,'.
+			__('plugins.generic.publicationValidator.field.common');
+	}
+
+	/**
 	 * Make additional validation checks against publishing requirements
 	 *
 	 * @see PKPPublicationService::validatePublish()
@@ -181,17 +221,15 @@ class PublicationValidatorPlugin extends GenericPlugin
 		$submission = $args[2];
 		$request = PKPApplication::get()->getRequest();
 		$context = $request->getContext();
-		$includedServices = '';
 
 		if(Config::getVar('publicationValidator', 'doaj') === 1 || $this->getSetting($context->getId(), 'enableDoaj') == 1){
-			$errors = $errors + (new ServiceDOAJ())->validate($publication,$submission,$context)->getErrors();
-			$includedServices = $includedServices.' DOAJ,';
+			$errors = $errors + (new ServiceDOAJ())->validate($publication,$submission,$context,'DOAJ')->getErrors();
 		}
-		$includedServices = rtrim($includedServices,',');
+		if(Config::getVar('publicationValidator', 'openair') === 1 || $this->getSetting($context->getId(), 'enableOpenAire') == 1){
+			$errors = $errors + (new ServiceOpenAire())->validate($publication,$submission,$context,'OpenAire')->getErrors();
+		}
 		if(!empty($errors)){
-			$errors[] = __(
-				'plugins.generic.publicationValidator.publication.services',
-				array('services' => $includedServices));
+			$errors = array_unique($errors);
 		}
 
 	}

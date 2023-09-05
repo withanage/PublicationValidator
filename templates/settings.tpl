@@ -1,19 +1,17 @@
 {**
- * plugins/generic/controlPublicFiles/templates/settings.tpl
+ * plugins/generic/publicationValidator/templates/settings.tpl
  *
  * Copyright (c) 2014-2019 Simon Fraser University
  * Copyright (c) 2003-2019 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
- * Settings form for the controlPublicFiles plugin.
+ * Settings form for the publicationValidator plugin.
  *}
 <script>
 	$(function() {ldelim}
 		$('#publicationValidatorSettings').pkpHandler('$.pkp.controllers.form.AjaxFormHandler');
 	{rdelim});
 </script>
-
-{translate key="plugins.generic.publicationValidator.setting.description"}
 
 <form
 	class="pkp_form"
@@ -25,7 +23,7 @@
 	{csrf}
 
 	{fbvFormArea}
-		{fbvFormSection label="plugins.generic.publicationValidator.setting.enableValidation" for="enableValidation" list=true}
+		{fbvFormSection label="plugins.generic.publicationValidator.setting.description" for="description" list=true}
 			{fbvElement
 				type="checkbox"
 				name="enableOpenAire"
@@ -36,6 +34,9 @@
 				disabled=$disableOpenAire
 				translate="true"
 			}
+			<ul id='openAire-list'>
+				<li>{$validateOpenAireFields}</li>
+			</ul>
 			{fbvElement
 				type="checkbox"
 				name="enableDoaj"
@@ -46,6 +47,9 @@
             	disabled=$disableDoaj
 				translate="true"
 			}
+			<ul id='doaj-list'>
+				<li>{$validateDoajFields}</li>
+			</ul>
 			{fbvElement
 				type="checkbox"
 				name="enableBase"
@@ -90,3 +94,4 @@
 	{/fbvFormArea}
 	{fbvFormButtons submitText="common.save"}
 </form>
+<script src="{$publicationValidatorJsUrl}"></script>

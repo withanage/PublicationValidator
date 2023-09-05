@@ -71,7 +71,12 @@ class PublicationValidatorPluginSettingsForm extends Form
 		$templateMgr->assign('disableOpenWebOfScience', $this->plugin->isGloballyConfigured('web_of_science'));
 		$templateMgr->assign('disableCrossref', $this->plugin->isGloballyConfigured('crossref'));
 		$templateMgr->assign('disableJGate', $this->plugin->isGloballyConfigured('jgate'));
-
+		$templateMgr->assign('validateOpenAireFields', $this->plugin->validateOpenAireFields());
+		$templateMgr->assign('validateDoajFields', $this->plugin->validateDoajFields());
+		$templateMgr->assign(
+			'publicationValidatorJsUrl',
+			$request->getBaseUrl() . '/' . $this->plugin->getPluginPath() . '/js/publicationValidator.js',
+		);
 		return parent::fetch($request, $template, $display);
 	}
 

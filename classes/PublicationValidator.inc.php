@@ -9,98 +9,201 @@ abstract class PublicationValidator
 	 * validate
 	 * @param Publication $publication
 	 * @param Submission $submission
+	 * @param $context
+	 * @param $service
 	 */
-	abstract public function validate(Publication $publication, Submission $submission, $context);
+	abstract public function validate(Publication $publication, Submission $submission, $context, $service);
 
 	/**
 	 * validate author and author affiliation
 	 * @param $publications
-	 * @return array
+	 * @param $service
+	 * @return string
 	 */
-	public function validateAuthor($publications) : array
+	public function validateAuthor($publications,$service) : string
 	{
-		$validationErrors = [];
+		$validationError = '';
 		if(empty($publications->getData('authors'))){
-			$validationErrors[] = __('plugins.generic.publicationValidator.authors.authorsNotFound');
+			$validationError = __(
+				'plugins.generic.publicationValidator.authors.authorsNotFound',
+				['service' => $service]
+			);
 		} else {
 			foreach ($publications->getData('authors') as $author){
 				if(empty($author->getAffiliation($publications->getData('locale')))){
-					$validationErrors[] = __('plugins.generic.publicationValidator.authors.authorAffiliation');
+					$validationError = __(
+						'plugins.generic.publicationValidator.authors.authorAffiliation',
+						['service' => $service]
+					);
 				}
 				break;
 			}
 		}
-		return $validationErrors;
+		return $validationError;
 	}
 
 	/**
 	 * validate locale
 	 * @param $publications
-	 * @return array
+	 * @param $service
+	 * @return string
 	 */
-	public function validateLocale($publications) : array
+	public function validateLocale($publications,$service) : string
 	{
-		$validationErrors = [];
+		$validationError = '';
 		if (empty($publications->getData('locale'))) {
-			$validationErrors[] = __('plugins.generic.publicationValidator.publication.locale');
+			$validationError = __(
+				'plugins.generic.publicationValidator.publication.locale',
+				['service' => $service]
+			);
 		}
-		return $validationErrors;
+		return $validationError;
 	}
 
 	/**
 	 * validate abstract
 	 * @param $publications
-	 * @return array
+	 * @param $locale
+	 * @param $service
+	 * @return string
 	 */
-	public function validateAbstract($publications) : array
+	public function validateAbstract($publications,$locale,$service) : string
 	{
-		$validationErrors = [];
-		if (empty($publications->getData('abstract'))) {
-			$validationErrors[] = __('plugins.generic.publicationValidator.publication.abstract');
+		$validationError = '';
+		if (empty($publications->getData('abstract',$locale))) {
+			$validationError = __(
+				'plugins.generic.publicationValidator.publication.abstract',
+				['service' => $service]
+			);
 		}
-		return $validationErrors;
+		return $validationError;
 	}
 
 	/**
 	 * validate publisher
 	 * @param $context
-	 * @return array
+	 * @param $service
+	 * @return string
 	 */
-	public function validatePublisher($context, $service) : array
+	public function validatePublisher($context,$service) : string
 	{
-		$validationErrors = [];
+		$validationError = '';
 		if (empty($context->getData('publisherInstitution'))) {
-			$validationErrors[] = __('plugins.generic.publicationValidator.publication.publisher')+$service;
+			$validationError = __(
+				'plugins.generic.publicationValidator.publication.publisher',
+				['service' => $service]
+			);
 		}
-		return $validationErrors;
+		return $validationError;
 	}
 
 	/**
 	 * validate printIssn and onlineIssn
 	 * @param $context
-	 * @return array
+	 * @param $service
+	 * @return string
 	 */
-	public function validateIssn($context) : array
+	public function validateIssn($context,$service) : string
 	{
-		$validationErrors = [];
+		$validationError = '';
 		if (empty($context->getData('printIssn')) || empty($context->getData('onlineIssn'))) {
-			$validationErrors[] = __('plugins.generic.publicationValidator.publication.issn');
+			$validationError = __(
+				'plugins.generic.publicationValidator.publication.issn',
+				['service' => $service]
+			);
 		}
-		return $validationErrors;
+		return $validationError;
 	}
 
 	/**
 	 * validate identifier
 	 * @param $submission
-	 * @return array
+	 * @param $service
+	 * @return string
 	 */
-	public function validateIdentifier($submission) : array
+	public function validateIdentifier($submission,$service) : string
 	{
-		$validationErrors = [];
+		$validationError = '';
 		if (empty($submission->getStoredPubId('doi'))) {
-			$validationErrors[] = __('plugins.generic.publicationValidator.publication.doi');
+			$validationError = __(
+				'plugins.generic.publicationValidator.publication.doi',
+				['service' => $service]
+			);
 		}
-		return $validationErrors;
+		return $validationError;
+	}
+
+	/**
+	 * validate article title
+	 * @param $publication
+	 * @param $locale
+	 * @param $service
+	 * @return string
+	 */
+	public function validateArticleTitle($publication,$locale,$service) : string
+	{
+		$validationError = '';
+		if (empty($publication->getData('title',$locale))) {
+			$validationError = __(
+				'plugins.generic.publicationValidator.publication.articleTitle',
+				['service' => $service]
+			);
+		}
+		return $validationError;
+	}
+
+	/**
+	 * validate license url
+	 * @param $publication
+	 * @param $service
+	 * @return string
+	 */
+	public function validateLicense($publication,$service) : string
+	{
+		$validationError = '';
+		if (empty($publication->getData('licenseUrl'))) {
+			$validationError = __(
+				'plugins.generic.publicationValidator.publication.licenseUrl',
+				['service' => $service]
+			);
+		}
+		return $validationError;
+	}
+
+	/**
+	 * validate subjects
+	 * @param $publication
+	 * @param $service
+	 * @return string
+	 */
+	public function validateSubjects($publication,$service) : string
+	{
+		$validationError = '';
+		if (empty($publication->getData('subjects'))) {
+			$validationError = __(
+				'plugins.generic.publicationValidator.publication.subjects',
+				['service' => $service]
+			);
+		}
+		return $validationError;
+	}
+
+	/**
+	 * validate subjects
+	 * @param $publication
+	 * @param $service
+	 * @return string
+	 */
+	public function validateRights($publication,$service) : string
+	{
+		$validationError = '';
+		if (empty($publication->getData('rights'))) {
+			$validationError = __(
+				'plugins.generic.publicationValidator.publication.rights',
+				['service' => $service]
+			);
+		}
+		return $validationError;
 	}
 
 	/**
