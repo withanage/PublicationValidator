@@ -1,5 +1,10 @@
 ## Publication Validator plugin
 
+
+
+# Work in Progress, use at your own-risk
+
+
 This Plugin validates the article  mandatory metadata   for indexing in the following services:
 
 | Service        | Supported             |
