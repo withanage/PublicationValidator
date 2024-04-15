@@ -24,19 +24,7 @@
 
 	{fbvFormArea}
 		{fbvFormSection label="plugins.generic.publicationValidator.setting.description" for="description" list=true}
-			{fbvElement
-				type="checkbox"
-				name="enableOpenAire"
-				id="enableOpenAire"
-				checked=$enableOpenAire
-				value=true
-				label="plugins.generic.publicationValidator.setting.enableOpenAire.description"
-				disabled=$disableOpenAire
-				translate="true"
-			}
-			<ul id='openAire-list'>
-				<li>{$validateOpenAireFields}</li>
-			</ul>
+
 			{fbvElement
 				type="checkbox"
 				name="enableDoaj"

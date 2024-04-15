@@ -5,24 +5,23 @@ This Plugin validates the article  mandatory metadata   for indexing in the foll
 | Service        | Supported             |
 |----------------|-----------------------|
 | DOAJ           | :heavy_check_mark:    |
-| OpenAire       | :heavy_check_mark:    |
 | Web Of Science | :construction_worker: |
 
 
 ## Validated services
-| Metadata Type      | DOAJ               | OpenAire            |
-|--------------------|--------------------|---------------------|
-| Title              | :heavy_check_mark: | :heavy_check_mark:  |
-| DOI                | :heavy_check_mark: | :heavy_check_mark:  |
-| Publisher          | :heavy_check_mark: | :heavy_check_mark:  |
-| Language           | :heavy_check_mark: | :heavy_check_mark:  |
-| License Condition  | :x:                | :heavy_check_mark:  |
-| Abstract           | :heavy_check_mark: | :heavy_check_mark:  |
-| Author List        | :heavy_check_mark: | :heavy_check_mark:  |
-| Author Affiliation | :heavy_check_mark: | :heavy_check_mark:  |
-| Access Rights      | :x:                | :heavy_check_mark:  |
-| Subject            | :x:                | :heavy_check_mark:  |
-| ISSN               | :heavy_check_mark: | :heavy_check_mark:  |
+| Metadata Type      | DOAJ               | Web Of Science |
+|--------------------|--------------------|-|
+| Title              | :heavy_check_mark: | |
+| DOI                | :heavy_check_mark: | |
+| Publisher          | :heavy_check_mark: | |
+| Language           | :heavy_check_mark: | |
+| License Condition  | :x:                | |
+| Abstract           | :heavy_check_mark: ||
+| Author List        | :heavy_check_mark: | |
+| Author Affiliation | :heavy_check_mark: | |
+| Access Rights      | :x:                ||
+| Subject            | :x:                | |
+| ISSN               | :heavy_check_mark: | |
 
 ### Supported OJS versions
 - OJS 3.3
