@@ -1,0 +1,112 @@
+
+msgid "plugins.generic.metadataCheck.displayName"
+msgstr "Metadata Check Plugin"
+
+msgid "plugins.generic.metadataCheck.description"
+msgstr "This Plugin validates the article  mandatory metadata  for indexing in the following services: DOAJ"
+
+msgid "plugins.generic.metadataCheck.setting.description"
+msgstr "Publication validation settings"
+
+msgid "plugins.generic.metadataCheck.setting.enableValidation"
+msgstr "Enable Validation"
+
+msgid "plugins.generic.metadataCheck.setting.enableOpenAire.description"
+msgstr "OpenAire"
+
+msgid "plugins.generic.metadataCheck.setting.enableDoaj.description"
+msgstr "DOAJ"
+
+msgid "plugins.generic.metadataCheck.setting.enableBase.description"
+msgstr "Base"
+
+msgid "plugins.generic.metadataCheck.setting.enableWebOfScience.description"
+msgstr "Web Of Science"
+
+msgid "plugins.generic.metadataCheck.setting.enableCrossref.description"
+msgstr "Crossref"
+
+msgid "plugins.generic.metadataCheck.setting.enableJGate.description"
+msgstr "J-Gate"
+
+msgid "plugins.generic.metadataCheck.field.abstract"
+msgstr "Abstract"
+
+msgid "plugins.generic.metadataCheck.field.authors"
+msgstr "Authors"
+
+msgid "plugins.generic.metadataCheck.field.authorAffiliation"
+msgstr "Author affiliation"
+
+msgid "plugins.generic.metadataCheck.field.locale"
+msgstr "Locale"
+
+msgid "plugins.generic.metadataCheck.field.publisher"
+msgstr "Publisher"
+
+msgid "plugins.generic.metadataCheck.field.publicationDate"
+msgstr "Publication date"
+
+msgid "plugins.generic.metadataCheck.field.doi"
+msgstr "DOI"
+
+msgid "plugins.generic.metadataCheck.field.articleTitle"
+msgstr "Article title"
+
+msgid "plugins.generic.metadataCheck.field.issn"
+msgstr "Issn"
+
+msgid "plugins.generic.metadataCheck.field.subjects"
+msgstr "Subjects"
+
+msgid "plugins.generic.metadataCheck.field.licenseUrl"
+msgstr "License"
+
+msgid "plugins.generic.metadataCheck.field.articleTitle"
+msgstr "Article title"
+
+msgid "plugins.generic.metadataCheck.field.rights"
+msgstr "Access rights"
+
+msgid "plugins.generic.metadataCheck.field.common"
+msgstr "fields will be validate before publishing"
+
+msgid "plugins.generic.metadataCheck.onlineIssn.requiredWithout"
+msgstr msgstr "Either an online ISSN or print ISSN must be provided before submissions can be deposited with MetadataCheck."
+
+msgid "plugins.generic.metadataCheck.printIssn.requiredWithout"
+msgstr msgstr "Either an print ISSN or online ISSN must be provided before submissions can be deposited with MetadataCheck."
+
+msgid "plugins.generic.metadataCheck.doi.required"
+msgstr "The submission \"{$publicationTitle}\" is not associated with a DOI and cannot be deposited with MetadataCheck ."
+
+msgid "plugins.generic.metadataCheck.doi.url"
+msgstr "The submission \"{$publicationTitle}\" is not associated with a valid DOI url and cannot be deposited with MetadataCheck ."
+
+msgid "plugins.generic.metadataCheck.publisherInstitution.required"
+msgstr "The submission \"{$publicationTitle}\" is not associated with a publisher institution and cannot be deposited with MetadataCheck ."
+
+msgid "plugins.generic.metadataCheck.citations.required"
+msgstr "The submission \"{$publicationTitle}\" is not associated with a citations and cannot be deposited with MetadataCheck ."
+
+msgid "plugins.generic.metadataCheck.citations.array"
+msgstr "The submission \"{$publicationTitle}\" is not associated with a citations type as an array and cannot be deposited with MetadataCheck ."
+
+msgid "plugins.generic.metadataCheck.subjects.required"
+msgstr "The submission \"{$publicationTitle}\" is not associated with subjects and cannot be deposited with MetadataCheck ."
+
+msgid "plugins.generic.metadataCheck.subjects.array"
+msgstr "The submission \"{$publicationTitle}\" is not associated with subjects type as an array and cannot be deposited with MetadataCheck ."
+
+msgid "plugins.generic.metadataCheck.licenseUrl.required"
+msgstr "The submission \"{$publicationTitle}\" is not associated with a license url and cannot be deposited with MetadataCheck ."
+
+msgid "plugins.generic.metadataCheck.licenseUrl.url"
+msgstr "The submission \"{$publicationTitle}\" is not associated with a valid license url and cannot be deposited with MetadataCheck ."
+
+msgid "plugins.generic.metadataCheck.contributors.required"
+msgstr "The submission \"{$publicationTitle}\" is not associated with contributors and cannot be deposited with MetadataCheck ."
+
+msgid "plugins.generic.metadataCheck.rights.required"
+msgstr "The submission \"{$publicationTitle}\" is not associated with rights and cannot be deposited with MetadataCheck ."
+
