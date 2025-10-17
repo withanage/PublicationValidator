@@ -5,7 +5,7 @@
  *
  * Distributed under the GNU GPL v3. For full terms see the file LICENSE.
  *
- * @brief Wrapper for PublicationValidator plugin.
+ * @brief Wrapper for MetadataCheck plugin.
  */
-require_once('PublicationValidatorPlugin.php');
-return new PublicationValidatorPlugin();
+require_once('MetadataCheckPlugin.php');
+return new \APP\plugins\generic\metadataCheck\MetadataCheckPlugin();
