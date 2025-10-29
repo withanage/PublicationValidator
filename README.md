@@ -39,8 +39,7 @@ git checkout stable-3_5_0 # branch
 - Got to settings
 - Enable services needed for validation
 
-### Demo
-- [Demo validation](https://github.com/user-attachments/assets/0e78757b-3f3b-4895-98b5-c38148bee54f)
+
 
 ### Troubleshooting
 - Please file an [Issue](https://github.com/metadataCheck/metadataCheck/issues)
